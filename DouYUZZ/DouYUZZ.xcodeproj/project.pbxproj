@@ -8,28 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		0A36095925C122BA00490CC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A36095825C122BA00490CC3 /* AppDelegate.swift */; };
-		0A36096025C122BA00490CC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A36095E25C122BA00490CC3 /* Main.storyboard */; };
 		0A36096225C122BD00490CC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A36096125C122BD00490CC3 /* Assets.xcassets */; };
 		0A36096525C122BD00490CC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A36096325C122BD00490CC3 /* LaunchScreen.storyboard */; };
-		0A36097525C1255400490CC3 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A36097325C1255400490CC3 /* Home.storyboard */; };
-		0A36097725C1257D00490CC3 /* Live.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A36097625C1257D00490CC3 /* Live.storyboard */; };
-		0A36097A25C125A000490CC3 /* Flollow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A36097825C125A000490CC3 /* Flollow.storyboard */; };
-		0A36097C25C125B700490CC3 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A36097B25C125B700490CC3 /* Profile.storyboard */; };
 		0A36098225C1285500490CC3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A36098125C1285500490CC3 /* MainViewController.swift */; };
+		0A36098425C1304C00490CC3 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A36098325C1304C00490CC3 /* Home.storyboard */; };
+		0A36098625C1305A00490CC3 /* Live.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A36098525C1305A00490CC3 /* Live.storyboard */; };
+		0A36098825C1306B00490CC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A36098725C1306B00490CC3 /* Main.storyboard */; };
+		0A36098A25C1307600490CC3 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A36098925C1307600490CC3 /* Profile.storyboard */; };
+		0A36098C25C1308600490CC3 /* Flollow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A36098B25C1308600490CC3 /* Flollow.storyboard */; };
+		0A36099A25C1320C00490CC3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A36099925C1320C00490CC3 /* HomeViewController.swift */; };
+		0A36099F25C13F7400490CC3 /* UIBarButtonItem-Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A36099E25C13F7400490CC3 /* UIBarButtonItem-Extention.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0A36095525C122BA00490CC3 /* DouYUZZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DouYUZZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A36095825C122BA00490CC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0A36095F25C122BA00490CC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0A36096125C122BD00490CC3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A36096425C122BD00490CC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A36096625C122BD00490CC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0A36097425C1255400490CC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DouYUZZ/Classes/Main/Base.lproj/Home.storyboard; sourceTree = "<group>"; };
-		0A36097625C1257D00490CC3 /* Live.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Live.storyboard; sourceTree = "<group>"; };
-		0A36097925C125A000490CC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DouYUZZ/Classes/Main/Base.lproj/Flollow.storyboard; sourceTree = "<group>"; };
-		0A36097B25C125B700490CC3 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		0A36098125C1285500490CC3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		0A36098325C1304C00490CC3 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		0A36098525C1305A00490CC3 /* Live.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Live.storyboard; sourceTree = "<group>"; };
+		0A36098725C1306B00490CC3 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		0A36098925C1307600490CC3 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		0A36098B25C1308600490CC3 /* Flollow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Flollow.storyboard; sourceTree = "<group>"; };
+		0A36099925C1320C00490CC3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		0A36099E25C13F7400490CC3 /* UIBarButtonItem-Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extention.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,12 +78,12 @@
 		0A36096C25C124D200490CC3 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0A36097225C124D200490CC3 /* Main */,
 				0A36096D25C124D200490CC3 /* Home */,
-				0A36096E25C124D200490CC3 /* Tools */,
-				0A36096F25C124D200490CC3 /* Profile */,
 				0A36097025C124D200490CC3 /* Live */,
 				0A36097125C124D200490CC3 /* Flollow */,
-				0A36097225C124D200490CC3 /* Main */,
+				0A36096F25C124D200490CC3 /* Profile */,
+				0A36096E25C124D200490CC3 /* Tools */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -87,7 +91,10 @@
 		0A36096D25C124D200490CC3 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				0A36097325C1255400490CC3 /* Home.storyboard */,
+				0A36098E25C1314500490CC3 /* Model */,
+				0A36098D25C1314500490CC3 /* View */,
+				0A36098F25C1314500490CC3 /* Controller */,
+				0A36098325C1304C00490CC3 /* Home.storyboard */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -95,6 +102,7 @@
 		0A36096E25C124D200490CC3 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				0A36099B25C13E0F00490CC3 /* Extention */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -102,7 +110,10 @@
 		0A36096F25C124D200490CC3 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				0A36097B25C125B700490CC3 /* Profile.storyboard */,
+				0A36099125C1315600490CC3 /* Controller */,
+				0A36099025C1315600490CC3 /* Model */,
+				0A36099225C1315600490CC3 /* View */,
+				0A36098925C1307600490CC3 /* Profile.storyboard */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -110,7 +121,10 @@
 		0A36097025C124D200490CC3 /* Live */ = {
 			isa = PBXGroup;
 			children = (
-				0A36097625C1257D00490CC3 /* Live.storyboard */,
+				0A36099425C1316200490CC3 /* Controller */,
+				0A36099325C1316200490CC3 /* Model */,
+				0A36099525C1316200490CC3 /* View */,
+				0A36098525C1305A00490CC3 /* Live.storyboard */,
 			);
 			path = Live;
 			sourceTree = "<group>";
@@ -118,7 +132,10 @@
 		0A36097125C124D200490CC3 /* Flollow */ = {
 			isa = PBXGroup;
 			children = (
-				0A36097825C125A000490CC3 /* Flollow.storyboard */,
+				0A36099625C1316F00490CC3 /* Controller */,
+				0A36099725C1316F00490CC3 /* Model */,
+				0A36099825C1316F00490CC3 /* View */,
+				0A36098B25C1308600490CC3 /* Flollow.storyboard */,
 			);
 			path = Flollow;
 			sourceTree = "<group>";
@@ -126,10 +143,103 @@
 		0A36097225C124D200490CC3 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				0A36095E25C122BA00490CC3 /* Main.storyboard */,
+				0A36098725C1306B00490CC3 /* Main.storyboard */,
 				0A36098125C1285500490CC3 /* MainViewController.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		0A36098D25C1314500490CC3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0A36098E25C1314500490CC3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0A36098F25C1314500490CC3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0A36099925C1320C00490CC3 /* HomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0A36099025C1315600490CC3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0A36099125C1315600490CC3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0A36099225C1315600490CC3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0A36099325C1316200490CC3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0A36099425C1316200490CC3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0A36099525C1316200490CC3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0A36099625C1316F00490CC3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0A36099725C1316F00490CC3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0A36099825C1316F00490CC3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0A36099B25C13E0F00490CC3 /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				0A36099E25C13F7400490CC3 /* UIBarButtonItem-Extention.swift */,
+			);
+			path = Extention;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,13 +300,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A36098A25C1307600490CC3 /* Profile.storyboard in Resources */,
+				0A36098C25C1308600490CC3 /* Flollow.storyboard in Resources */,
 				0A36096525C122BD00490CC3 /* LaunchScreen.storyboard in Resources */,
+				0A36098825C1306B00490CC3 /* Main.storyboard in Resources */,
 				0A36096225C122BD00490CC3 /* Assets.xcassets in Resources */,
-				0A36097A25C125A000490CC3 /* Flollow.storyboard in Resources */,
-				0A36096025C122BA00490CC3 /* Main.storyboard in Resources */,
-				0A36097725C1257D00490CC3 /* Live.storyboard in Resources */,
-				0A36097C25C125B700490CC3 /* Profile.storyboard in Resources */,
-				0A36097525C1255400490CC3 /* Home.storyboard in Resources */,
+				0A36098625C1305A00490CC3 /* Live.storyboard in Resources */,
+				0A36098425C1304C00490CC3 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,42 +319,20 @@
 			files = (
 				0A36098225C1285500490CC3 /* MainViewController.swift in Sources */,
 				0A36095925C122BA00490CC3 /* AppDelegate.swift in Sources */,
+				0A36099A25C1320C00490CC3 /* HomeViewController.swift in Sources */,
+				0A36099F25C13F7400490CC3 /* UIBarButtonItem-Extention.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		0A36095E25C122BA00490CC3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0A36095F25C122BA00490CC3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0A36096325C122BD00490CC3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				0A36096425C122BD00490CC3 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		0A36097325C1255400490CC3 /* Home.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0A36097425C1255400490CC3 /* Base */,
-			);
-			name = Home.storyboard;
-			sourceTree = "<group>";
-		};
-		0A36097825C125A000490CC3 /* Flollow.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0A36097925C125A000490CC3 /* Base */,
-			);
-			name = Flollow.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -370,7 +458,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = DouYUZZ/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -388,7 +476,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = DouYUZZ/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

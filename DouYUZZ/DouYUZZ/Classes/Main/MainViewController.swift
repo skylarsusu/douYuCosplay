@@ -14,8 +14,20 @@ class MainViewController: UITabBarController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+//        self.view.backgroundColor = UIColor.white
+        addChildVC("Home")
+        addChildVC("Live")
+        addChildVC("Flollow")
+        addChildVC("Profile")
+     
     }
     
+    fileprivate func addChildVC(_ storyName : String) {
+        //通过storyboard获取控制器
+        let childVC = UIStoryboard(name: storyName, bundle: nil).instantiateInitialViewController()!
+        //2.将childvc作为子控制器
+        addChild(childVC)
+    }
 
     /*
     // MARK: - Navigation
