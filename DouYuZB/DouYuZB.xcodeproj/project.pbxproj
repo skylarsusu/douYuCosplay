@@ -61,6 +61,7 @@
 		0A36092B25C10A5D00490CC3 /* DouYuZB */ = {
 			isa = PBXGroup;
 			children = (
+				0A36094525C11AE500490CC3 /* Classes */,
 				0A36092C25C10A5D00490CC3 /* AppDelegate.h */,
 				0A36092D25C10A5D00490CC3 /* AppDelegate.m */,
 				0A36092F25C10A5D00490CC3 /* SceneDelegate.h */,
@@ -74,6 +75,61 @@
 				0A36093E25C10A5F00490CC3 /* main.m */,
 			);
 			path = DouYuZB;
+			sourceTree = "<group>";
+		};
+		0A36094525C11AE500490CC3 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				0A36094B25C11AE500490CC3 /* Main */,
+				0A36094625C11AE500490CC3 /* Home */,
+				0A36094925C11AE500490CC3 /* Live */,
+				0A36094A25C11AE500490CC3 /* Flollow */,
+				0A36094825C11AE500490CC3 /* Profile */,
+				0A36094725C11AE500490CC3 /* Tools */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		0A36094625C11AE500490CC3 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		0A36094725C11AE500490CC3 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		0A36094825C11AE500490CC3 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		0A36094925C11AE500490CC3 /* Live */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Live;
+			sourceTree = "<group>";
+		};
+		0A36094A25C11AE500490CC3 /* Flollow */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Flollow;
+			sourceTree = "<group>";
+		};
+		0A36094B25C11AE500490CC3 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
