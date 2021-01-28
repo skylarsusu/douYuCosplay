@@ -8,8 +8,37 @@
 
 import UIKit
 
+
+private let kTitleViewH : CGFloat = 40
 class HomeViewController: UIViewController {
 
+    //mark - 上方titleView
+    fileprivate lazy var pageTitleView : PageTitleView = {[weak self] in
+        let titleFrame = CGRect(x: 0, y: kStatusBarH + kStatukNavigationBarHsBarH, width: kScreenW, height: kTitleViewH)
+        let titles = ["推荐", "游戏", "娱乐", "趣玩"]
+        
+        let titleView = PageTitleView(frame: titleFrame, titles: titles)
+//        titleView.backgroundColor = UIColor.yellow
+        titleView.delegate  = self
+        return titleView
+    }()
+    //mark 中间内容
+    fileprivate lazy var pageContentView : PageContentView = {[weak self] in
+        //1.确定内容的frame
+        let contentFrame = CGRect(x: 0, y: kStatusBarH + kStatukNavigationBarHsBarH + kTitleViewH, width: kScreenW, height: kScreenH - kStatusBarH - kStatukNavigationBarHsBarH - kTitleViewH)
+        //2.确定所有的子控制器
+        var childVcs = [UIViewController]()
+        for _ in 0..<4 {
+            let vc = UIViewController()
+            vc.view.backgroundColor = UIColor(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)))
+            childVcs.append(vc)
+            
+        }
+        let cotentView = PageContentView(frame: contentFrame, childVcs: childVcs, parentViewController: self)
+        
+        return cotentView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -21,7 +50,15 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController {
     private func setupUI() {
+        
+        //1.设置导航栏
         setupNavigationBar()
+        
+        //2.添加TitleView
+        view.addSubview(pageTitleView)
+        
+        //3.添加内容ContentView
+        view.addSubview(pageContentView)
     }
     
     private func setupNavigationBar() {
@@ -35,26 +72,6 @@ extension HomeViewController {
         //2.设置右侧的item
         let size = CGSize(width: 30, height: 30)
         
-        /**
-            let historyBtn = UIButton()
-             historyBtn.setImage(UIImage(named: "image_my_history"), for: .normal)
-             historyBtn.setImage(UIImage(named: "Image_my_history_click"), for: .highlighted)
-             historyBtn.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: size)
-             let historyItem = UIBarButtonItem(customView: historyBtn)
-         
-             
-             let searchBtn = UIButton()
-             searchBtn.setImage(UIImage(named: "btn_search"), for: .normal)
-             searchBtn.setImage(UIImage(named: "btn_search_clicked"), for: .highlighted)
-             searchBtn.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: size)
-             let searchItem = UIBarButtonItem(customView: searchBtn)
-             
-             let qrcodeBtn = UIButton()
-             qrcodeBtn.setImage(UIImage(named: "Image_scan"), for: .normal)
-             qrcodeBtn.setImage(UIImage(named: "Image_scan_click"), for: .highlighted)
-             qrcodeBtn.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: size)
-             let qrcodeItem = UIBarButtonItem(customView: qrcodeBtn)
-         */
         let historyItem = UIBarButtonItem(imageName: "image_my_history", highImageName: "Image_my_history_click", size: size)
         let searchItem = UIBarButtonItem(imageName: "btn_search", highImageName: "btn_search_clicked", size: size)
         let qrcodeItem = UIBarButtonItem(imageName: "Image_scan", highImageName: "Image_scan_click", size: size)
@@ -64,3 +81,12 @@ extension HomeViewController {
         
     }
 }
+
+//遵守协议 PageTitleViewDelegate
+extension HomeViewController : PageTitleViewDelegate {
+    func pageTitleView(_ titleView: PageTitleView, selectedIndex index: Int) {
+        print(index)
+        pageContentView.setCurrentIndex(currentIndex: index)
+    }
+}
+
