@@ -134,11 +134,13 @@ extension PageTitleView {
         guard let currentLabel = tapGes.view as? UILabel else {
             return
         }
+        // 1.1.如果是重复点击同一个Title,那么直接返回
+        if currentLabel.tag == currentIndex { return }
         //2.获取之前的label
         let oldLabel = titleLabels[currentIndex]
         //3.切换颜色
-        currentLabel.textColor = UIColor.orange
-        oldLabel.textColor = UIColor.darkGray
+        currentLabel.textColor = UIColor(r: kSelectColor.0, g: kSelectColor.1, b: kSelectColor.2)
+        oldLabel.textColor = UIColor(r: kNormalColor.0, g: kNormalColor.1, b: kNormalColor.2)
         //4.保存最新label的下标志
         currentIndex = currentLabel.tag
         
@@ -152,5 +154,32 @@ extension PageTitleView {
         delegate?.pageTitleView(self, selectedIndex: currentIndex)
        
         
+    }
+}
+
+extension PageTitleView {
+    func setTitleViewWithProgress(_ progress : CGFloat, sourceIndex : Int, targetIndex : Int) {
+        //1.取出sourceLabel/targetLabel
+        let sourceLabel = titleLabels[sourceIndex]
+        let targetLabel = titleLabels[targetIndex]
+        
+        // 2.处理滑块的逻辑
+        let moveTotalX = targetLabel.frame.origin.x - sourceLabel.frame.origin.x
+        let moveX = moveTotalX * progress
+        scrollLine.frame.origin.x = sourceLabel.frame.origin.x + moveX
+        
+        // 3.颜色的渐变(复杂)
+        // 3.1.取出变化的范围
+        let colorDelta = (kSelectColor.0 - kNormalColor.0, kSelectColor.1 - kNormalColor.1, kSelectColor.2 - kNormalColor.2)
+        
+        // 3.2.变化sourceLabel
+        sourceLabel.textColor = UIColor(r: kSelectColor.0 - colorDelta.0 * progress, g: kSelectColor.1 - colorDelta.1 * progress, b: kSelectColor.2 - colorDelta.2 * progress)
+        
+        // 3.2.变化targetLabel
+        targetLabel.textColor = UIColor(r: kNormalColor.0 + colorDelta.0 * progress, g: kNormalColor.1 + colorDelta.1 * progress, b: kNormalColor.2 + colorDelta.2 * progress)
+        
+        // 4.记录最新的index
+        currentIndex = targetIndex
+       
     }
 }

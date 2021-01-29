@@ -28,13 +28,15 @@ class HomeViewController: UIViewController {
         let contentFrame = CGRect(x: 0, y: kStatusBarH + kStatukNavigationBarHsBarH + kTitleViewH, width: kScreenW, height: kScreenH - kStatusBarH - kStatukNavigationBarHsBarH - kTitleViewH)
         //2.确定所有的子控制器
         var childVcs = [UIViewController]()
-        for _ in 0..<4 {
+        childVcs.append(RecommendViewController())
+        for _ in 0..<3 {
             let vc = UIViewController()
             vc.view.backgroundColor = UIColor(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)))
             childVcs.append(vc)
             
         }
         let cotentView = PageContentView(frame: contentFrame, childVcs: childVcs, parentViewController: self)
+        cotentView.delegate = self
         
         return cotentView
     }()
@@ -90,3 +92,8 @@ extension HomeViewController : PageTitleViewDelegate {
     }
 }
 
+extension HomeViewController : PageContentViewDelegate {
+    func slidePageContentView(_ contentView: PageContentView, progress: CGFloat, sourceIndex: Int, target: Int) {
+        pageTitleView.setTitleViewWithProgress(progress, sourceIndex: sourceIndex, targetIndex: target)
+    }
+}
