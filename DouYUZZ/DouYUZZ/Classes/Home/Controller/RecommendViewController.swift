@@ -12,10 +12,12 @@ private let KItemMargin : CGFloat = 10
 private let kHeaderViewH : CGFloat = 50
 
 private let kNormalCellID = "kNormalCellID"
+private let kPrettyCellID = "kPrettyCellID"
 private let kHeaderCellID = "kHeaderCellID"
 
 let kNormalItemW = (kScreenW - 3 * KItemMargin)/2
 let kNormalItemH = kNormalItemW * 3 / 4
+let kPrettyItemH = kNormalItemW * 4 / 3
 
 class RecommendViewController: UIViewController {
 
@@ -32,10 +34,10 @@ class RecommendViewController: UIViewController {
         collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         collectionView.backgroundColor = UIColor.white
         collectionView.dataSource = self
-        
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: kNormalCellID)
-        collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: kHeaderCellID)
-      
+        collectionView.delegate = self
+        collectionView.register(UINib(nibName: "CollectionNormalCell", bundle: nil), forCellWithReuseIdentifier: kNormalCellID)
+        collectionView.register(UINib(nibName: "CollectionPrettyCell", bundle: nil), forCellWithReuseIdentifier: kPrettyCellID)
+        collectionView.register(UINib(nibName: "CollectionHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: kHeaderCellID)
         
         return collectionView
         
@@ -44,7 +46,9 @@ class RecommendViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    
+        
+        
+        
         //视图布局
         setupUI()
         // Do any additional setup after loading the view.
@@ -64,8 +68,12 @@ extension RecommendViewController : UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        if indexPath.section == 1 {
+            let prettyCell = collectionView.dequeueReusableCell(withReuseIdentifier: kPrettyCellID, for: indexPath)
+            return prettyCell
+        }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCellID, for: indexPath)
-        cell.backgroundColor = UIColor.yellow
+//        cell.backgroundColor = UIColor.yellow
         return cell
     }
     
@@ -78,11 +86,20 @@ extension RecommendViewController : UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeaderCellID, for: indexPath)
-        
-        headerView.backgroundColor = UIColor.gray
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeaderCellID, for: indexPath) 
         
         return headerView
     }
     
+}
+
+extension RecommendViewController : UICollectionViewDelegateFlowLayout {
+  
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if indexPath.section == 1 {
+            return CGSize(width: kNormalItemW, height: kPrettyItemH)
+        }
+        
+        return CGSize(width: kNormalItemW, height: kNormalItemH)
+    }
 }
