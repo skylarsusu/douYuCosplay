@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CollectionHeaderCell" customModule="DouYUZZ" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image_my_history_click" translatesAutoresizingMaskIntoConstraints="NO" id="t0d-hn-ir1">
+                        <rect key="frame" x="5" y="13" width="14" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="14" id="CSJ-nZ-jqw"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="14" id="YPI-Dx-dsd"/>
+                            <constraint firstAttribute="height" constant="14" id="bKF-rs-KDM"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="王牌鱼市来袭，骆歆堂主为你送福利" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LU5-2e-N5h">
+                        <rect key="frame" x="24" y="12.5" width="138" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="138" id="LgX-NR-QWT"/>
+                            <constraint firstAttribute="height" constant="15" id="Ojg-qd-9Qu"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQU-5y-h2l">
+                        <rect key="frame" x="340" y="6.5" width="30" height="27"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="27" id="1cP-Jg-BeF"/>
+                            <constraint firstAttribute="width" constant="30" id="Ud7-UK-Wr1"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <state key="normal" title="预定">
+                            <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                <color key="value" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                <integer key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="submit:" destination="gTV-IL-0wX" eventType="touchUpInside" id="hhy-43-Jes"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4539人预定" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFp-yu-Di9">
+                        <rect key="frame" x="267" y="12.5" width="68" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="68" id="bmA-5R-sYk"/>
+                            <constraint firstAttribute="height" constant="15" id="ohG-4T-TG5"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2/01  19:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mL-Gv-OVo">
+                        <rect key="frame" x="188" y="12.5" width="70" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="5Kc-J6-nbS"/>
+                            <constraint firstAttribute="height" constant="15" id="Qgg-36-io4"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="5mL-Gv-OVo" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="1Fn-7d-Xt7"/>
+                <constraint firstItem="GQU-5y-h2l" firstAttribute="leading" secondItem="kFp-yu-Di9" secondAttribute="trailing" constant="5" id="C9F-kc-XaR"/>
+                <constraint firstItem="t0d-hn-ir1" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="DCd-oF-tGX"/>
+                <constraint firstAttribute="trailing" secondItem="GQU-5y-h2l" secondAttribute="trailing" constant="5" id="HRb-eb-haQ"/>
+                <constraint firstItem="LU5-2e-N5h" firstAttribute="leading" secondItem="t0d-hn-ir1" secondAttribute="trailing" constant="5" id="RgO-lG-GDM"/>
+                <constraint firstItem="GQU-5y-h2l" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="SWj-hT-AwX"/>
+                <constraint firstItem="LU5-2e-N5h" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="d26-sy-J8W"/>
+                <constraint firstItem="kFp-yu-Di9" firstAttribute="leading" secondItem="5mL-Gv-OVo" secondAttribute="trailing" constant="9" id="j9m-ce-5DM"/>
+                <constraint firstItem="t0d-hn-ir1" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="wPA-5D-tWe"/>
+                <constraint firstItem="kFp-yu-Di9" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="zaK-gO-Fh6"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="375" height="40"/>
+            <connections>
+                <outlet property="act_name" destination="LU5-2e-N5h" id="vsJ-5q-IVR"/>
+                <outlet property="act_start_time" destination="5mL-Gv-OVo" id="wit-Zg-oMW"/>
+                <outlet property="sub_num" destination="kFp-yu-Di9" id="Isj-g7-wFi"/>
+                <outlet property="sub_num_Label" destination="GQU-5y-h2l" id="6a9-KN-tx5"/>
+            </connections>
+            <point key="canvasLocation" x="63" y="101"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="Image_my_history_click" width="22" height="22"/>
+    </resources>
+</document>
