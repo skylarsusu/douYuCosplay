@@ -79,26 +79,17 @@ class RecommendViewController: UIViewController {
 
 extension RecommendViewController {
     private func loadData() {
-        RecommendVM.requestMainData {
-            self.collectionView.reloadData()
-        }
-        RecommendVM.requestData {
+        
+        RecommendVM.requestSlideData {
             self.recycleView.cycleModels = self.RecommendVM.cycleModels
         }
-        RecommendVM.requestNoticeData {
+        RecommendVM.requestData {
             self.noticeView.noticeModels = self.RecommendVM.notices
-        }
-        RecommendVM.requestGameData {
-            
-            
             self.gameView.gameModels = self.RecommendVM.gameModels
-            let gameModel_first = GameModel()
-            gameModel_first.tag_name = "全部"
-            self.gameView.gameModels?.insert(gameModel_first, at: 0)
-            let gameModel_last = GameModel()
-            gameModel_last.tag_name = "更多"
-            self.gameView.gameModels?.append(gameModel_last)
+            self.collectionView.reloadData()
         }
+    
+
     }
 }
 
