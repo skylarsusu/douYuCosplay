@@ -13,3 +13,5 @@ let slideRec : String = "http://rap2api.taobao.org/app/mock/276910/mgapi/livenc/
 let recList : String = "http://rap2api.taobao.org/app/mock/276910/mgapi/livenc/home/getRecList1"
 
 let noticeList : String = "http://rap2api.taobao.org/app/mock/276910/mgapi/live/asubscribe/focusList"
+
+let cateList : String = "http://rap2api.taobao.org/app/mock/276910/live/cate/mGetCate2"

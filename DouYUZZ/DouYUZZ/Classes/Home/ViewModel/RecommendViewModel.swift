@@ -13,10 +13,25 @@ class RecommendViewModel {
     //懒加载
    lazy var cycleModels : [CycleModel] = [CycleModel]()
    lazy var dataGroup : AnchorGroup = AnchorGroup()
-    lazy var notices : [NoticeModel] = [NoticeModel]()
+   lazy var notices : [NoticeModel] = [NoticeModel]()
+    lazy var gameModels : [GameModel] = [GameModel]()
 }
 extension RecommendViewModel {
     
+    func requestGameData(_ finishCallBack : @escaping () -> ()) {
+        NetworkTools.requestData(.get, URLString: cateList) { (result) in
+            //1.将result转成字典类型
+          guard let resultDict = result as? [String : NSObject] else {return}
+          
+          //2.根据data的key获取数据
+          guard let dataArray = resultDict["data"] as? [[String : NSObject]] else {return}
+            for dict in dataArray {
+                let gameModel = GameModel(dict: dict)
+                self.gameModels.append(gameModel)
+            }
+             finishCallBack()
+        }
+    }
     func requestNoticeData(_ finishCallBack : @escaping () -> ()) {
         NetworkTools.requestData(.get, URLString: noticeList) { (result) in
             //1.将result转成字典类型
@@ -81,3 +96,4 @@ extension RecommendViewModel {
         }
     }
 }
+

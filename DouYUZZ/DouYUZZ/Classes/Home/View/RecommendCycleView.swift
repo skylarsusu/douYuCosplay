@@ -12,6 +12,7 @@ private let kRecommendCycleCellID = "kRecommendCycleCellID"
 
 class RecommendCycleView: UIView {
     
+    var cycleTimer : Timer?
     var cycleModels : [CycleModel]? {
         didSet {
             //刷新collectionView
@@ -23,6 +24,9 @@ class RecommendCycleView: UIView {
             let indexPath = IndexPath(item: (cycleModels?.count ?? 0) * 10, section: 0)
             collectionView.scrollToItem(at: indexPath, at: .left, animated: false)
             
+            //添加定时器
+            removeCycleTimer()
+            addCycleTimer()
         }
     }
     
@@ -92,14 +96,14 @@ extension RecommendCycleView {
 
 extension RecommendCycleView : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return cycleModels?.count ?? 0
+        return (cycleModels?.count ?? 0) * 100000
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kRecommendCycleCellID, for: indexPath) as! RecommendCycleCell
         
-        cell.cycleModel = cycleModels![indexPath.row]
+        cell.cycleModel = cycleModels![indexPath.row % cycleModels!.count]
 
         return cell
     }
@@ -119,14 +123,31 @@ extension RecommendCycleView : UICollectionViewDelegateFlowLayout {
         
         return CGSize(width: kScreenW, height: kCycleViewH)
     }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        removeCycleTimer()
+    }
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        addCycleTimer()
+    }
 }
-//extension RecommendCycleView : UICollectionViewDelegate {
-//
-//
-////    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-////      let page = floor(scrollView.contentOffset.x / self.bounds.width)
-////          pageView.currentPage = Int(page)
-////    }
-//
-//
-//}
+extension RecommendCycleView {
+    fileprivate func addCycleTimer() {
+           cycleTimer = Timer(timeInterval: 3.0, target: self, selector: #selector(self.scrollToNext), userInfo: nil, repeats: true)
+        RunLoop.main.add(cycleTimer!, forMode: RunLoop.Mode.common)
+       }
+       
+       fileprivate func removeCycleTimer() {
+           cycleTimer?.invalidate() // 从运行循环中移除
+           cycleTimer = nil
+       }
+       
+       @objc fileprivate func scrollToNext() {
+           // 1.获取滚动的偏移量
+           let currentOffsetX = collectionView.contentOffset.x
+
+           let offsetX = currentOffsetX + collectionView.bounds.width
+           collectionView.setContentOffset(CGPoint(x: offsetX, y: 0), animated: true)
+        
+    }
+}

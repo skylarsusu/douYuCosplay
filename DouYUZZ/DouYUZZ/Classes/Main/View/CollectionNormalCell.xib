@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Img_default" translatesAutoresizingMaskIntoConstraints="NO" id="IOi-tg-GYQ">
-                        <rect key="frame" x="0.0" y="0.0" width="202" height="150"/>
+                        <rect key="frame" x="0.0" y="0.0" width="202" height="124"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                 <integer key="value" value="5"/>
@@ -52,18 +52,23 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="斗鱼直播模拟" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NRC-Vr-8sX">
-                        <rect key="frame" x="5" y="145" width="192" height="14"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="斗鱼直播模拟" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NRC-Vr-8sX">
+                        <rect key="frame" x="5" y="119" width="192" height="40"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="14" id="7NG-zz-Wzl"/>
+                            <constraint firstAttribute="height" constant="40" id="7NG-zz-Wzl"/>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="14" id="lBn-vo-Nzl"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="lBn-vo-Nzl"/>
+                            </mask>
+                        </variation>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="斗鱼官方直播" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91K-a2-Jmi">
-                        <rect key="frame" x="5" y="106.5" width="80" height="15"/>
+                        <rect key="frame" x="5" y="103.5" width="80" height="15"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="82S-It-o49"/>
                             <constraint firstAttribute="width" constant="80" id="yF2-4I-Pgb"/>
@@ -73,7 +78,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ss-s1-Y7F">
-                        <rect key="frame" x="122" y="106" width="80" height="16"/>
+                        <rect key="frame" x="122" y="103" width="80" height="16"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="lCN-Jx-hPd"/>
                             <constraint firstAttribute="width" constant="80" id="yzO-Nd-rbM"/>
@@ -86,7 +91,7 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="IOi-tg-GYQ" secondAttribute="trailing" id="0yd-jI-UbK"/>
                 <constraint firstItem="NRC-Vr-8sX" firstAttribute="top" secondItem="IOi-tg-GYQ" secondAttribute="bottom" constant="-5" id="227-dC-hNY"/>
-                <constraint firstItem="IOi-tg-GYQ" firstAttribute="bottom" secondItem="8Ss-s1-Y7F" secondAttribute="bottom" constant="28" id="2ou-yy-Dxm"/>
+                <constraint firstItem="IOi-tg-GYQ" firstAttribute="bottom" secondItem="8Ss-s1-Y7F" secondAttribute="bottom" constant="5" id="2ou-yy-Dxm"/>
                 <constraint firstItem="91K-a2-Jmi" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="6tz-TS-gml"/>
                 <constraint firstItem="IOi-tg-GYQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="8NF-3u-0Py"/>
                 <constraint firstItem="cpE-88-Xup" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="8ea-sR-Z7N"/>

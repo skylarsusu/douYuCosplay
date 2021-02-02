@@ -12,6 +12,8 @@ private let kRecommendNoticeCellID = "kRecommendNoticeCellID"
 
 class RecommendNoticeView: UIView {
     
+    //定义属性
+    var cycleTimer : Timer?
     var noticeModels : [NoticeModel]? {
         didSet {
             //刷新collectionView
@@ -20,6 +22,10 @@ class RecommendNoticeView: UIView {
             // 3.默认滚动到中间某一个位置
             let indexPath = IndexPath(item: (noticeModels?.count ?? 0) * 10, section: 0)
             collectionView.scrollToItem(at: indexPath, at: .left, animated: false)
+            
+            // 4.添加定时器
+            removeCycleTimer()
+            addCycleTimer()
             
         }
     }
@@ -30,7 +36,7 @@ class RecommendNoticeView: UIView {
         layout.itemSize = (self?.bounds.size)!
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
-        layout.scrollDirection = .horizontal
+        layout.scrollDirection = .vertical
         
         //2.创建UICollectionView
         let collectionView = UICollectionView(frame: (self?.bounds)!, collectionViewLayout: layout)
@@ -38,7 +44,7 @@ class RecommendNoticeView: UIView {
         collectionView.isPagingEnabled = true
         collectionView.bounces = false
         collectionView.dataSource = self
-//        collectionView.delegate = self  //设置代理
+        collectionView.delegate = self  //设置代理
 //        collectionView.scrollsToTop = false
 //        collectionView.automaticallyAdjustsScrollViewInsets = NO;
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -81,7 +87,7 @@ extension RecommendNoticeView {
 
 extension RecommendNoticeView : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return noticeModels?.count ?? 0
+        return (noticeModels?.count ?? 0) * 10000
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -89,18 +95,49 @@ extension RecommendNoticeView : UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kRecommendNoticeCellID, for: indexPath) as! CollectionHeaderCell
         
 //        cell.backgroundColor = UIColor.red
-        cell.noticeModel = noticeModels![indexPath.row]
+        cell.noticeModel = noticeModels![indexPath.row % noticeModels!.count]
 
         return cell
     }
     
 }
 
-//extension RecommendNoticeView : UICollectionViewDelegateFlowLayout {
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//
-//        return CGSize(width: kScreenW, height: kNoticeViewH)
-//    }
-//}
+extension RecommendNoticeView : UICollectionViewDelegateFlowLayout {
 
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        removeCycleTimer()
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        addCycleTimer()
+    }
+}
+
+extension RecommendNoticeView {
+    fileprivate func addCycleTimer() {
+           cycleTimer = Timer(timeInterval: 3.0, target: self, selector: #selector(self.scrollToNext), userInfo: nil, repeats: true)
+        RunLoop.main.add(cycleTimer!, forMode: RunLoop.Mode.common)
+       }
+       
+       fileprivate func removeCycleTimer() {
+           cycleTimer?.invalidate() // 从运行循环中移除
+           cycleTimer = nil
+       }
+       
+       @objc fileprivate func scrollToNext() {
+           // 1.获取滚动的偏移量
+           let currentOffsetY = collectionView.contentOffset.y
+
+           let offsetY = currentOffsetY + collectionView.bounds.height
+//        if offsetY == CGFloat(150) {
+////            offsetY = 50
+//            collectionView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+//        } else {
+           // 2.滚动该位置
+//           let offsetX = CGFloat(currentIndex) * collectionView.frame.width
+//           collectionView.setContentOffset(CGPoint(x: offsetX, y: 0), animated: true)
+           collectionView.setContentOffset(CGPoint(x: 0, y: offsetY), animated: true)
+//        }
+       }
+}

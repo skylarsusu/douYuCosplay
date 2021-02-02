@@ -25,7 +25,9 @@ class CollectionNormalCell: UICollectionViewCell {
             
             nickname.text = anchorModel?.nickname
             roomName.text = anchorModel?.room_name
-            tagLabel.text = anchorModel?.tagDes
+            tagLabel.text = " " + anchorModel!.tagDes + " "
+            tagLabel.layer.borderColor = UIColor.orange.cgColor
+            tagLabel.layer.borderWidth = 1
             let online : String = "\(floor(Double((anchorModel?.online)!/10000)))" + "万"
             onLineNumbet.setTitle(online, for: .normal)
           

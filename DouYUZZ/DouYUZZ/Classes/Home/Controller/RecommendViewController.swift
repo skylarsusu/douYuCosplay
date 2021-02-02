@@ -10,6 +10,7 @@ import UIKit
 
 private let KItemMargin : CGFloat = 10
 private let kHeaderViewH : CGFloat = 50
+private let kGameViewH : CGFloat = 180
 
 private let kNormalCellID = "kNormalCellID"
 private let kPrettyCellID = "kPrettyCellID"
@@ -28,11 +29,16 @@ class RecommendViewController: UIViewController {
 
     //上方翻页图片
     fileprivate lazy var recycleView : RecommendCycleView = {
-        let cycleView = RecommendCycleView(frame: CGRect(x: 0, y: -(kCycleViewH + kHeaderViewH), width: kScreenW, height: kCycleViewH))
+        let cycleView = RecommendCycleView(frame: CGRect(x: 0, y: -(kCycleViewH + kHeaderViewH + kGameViewH), width: kScreenW, height: kCycleViewH))
        
         return cycleView
     }()
     
+    //游戏推荐
+    fileprivate lazy var gameView : RecommendGameView = {
+        let gameView = RecommendGameView(frame: CGRect(x: 0, y: -(kHeaderViewH + kGameViewH), width: kScreenW, height: kGameViewH))
+        return gameView
+    }()
     //下方滚动预告
     fileprivate lazy var noticeView : RecommendNoticeView = {
         let noticeView = RecommendNoticeView(frame: CGRect(x: 0, y:  -kHeaderViewH , width: kScreenW, height: kHeaderViewH))
@@ -53,8 +59,6 @@ class RecommendViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(UINib(nibName: "CollectionNormalCell", bundle: nil), forCellWithReuseIdentifier: kNormalCellID)
-//        collectionView.register(UINib(nibName: "CollectionPrettyCell", bundle: nil), forCellWithReuseIdentifier: kPrettyCellID)
-//        collectionView.register(UINib(nibName: "CollectionHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: kHeaderCellID)
         
         return collectionView
         
@@ -84,7 +88,17 @@ extension RecommendViewController {
         RecommendVM.requestNoticeData {
             self.noticeView.noticeModels = self.RecommendVM.notices
         }
-
+        RecommendVM.requestGameData {
+            
+            
+            self.gameView.gameModels = self.RecommendVM.gameModels
+            let gameModel_first = GameModel()
+            gameModel_first.tag_name = "全部"
+            self.gameView.gameModels?.insert(gameModel_first, at: 0)
+            let gameModel_last = GameModel()
+            gameModel_last.tag_name = "更多"
+            self.gameView.gameModels?.append(gameModel_last)
+        }
     }
 }
 
@@ -95,10 +109,11 @@ extension RecommendViewController {
         self.view .addSubview(collectionView)
         //将cycleView加到collectionView
         collectionView .addSubview(recycleView)
+        collectionView.addSubview(gameView)
         collectionView.addSubview(noticeView)
         
         //设置collectionView的内边距
-        collectionView.contentInset = UIEdgeInsets(top: kCycleViewH + kHeaderViewH, left: 0, bottom: 0, right: 0)
+        collectionView.contentInset = UIEdgeInsets(top: kCycleViewH + kGameViewH + kHeaderViewH, left: 0, bottom: 0, right: 0)
         
         
     }
